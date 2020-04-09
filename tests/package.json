@@ -1,0 +1,9 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "Tests package for nodejs-testing-patterns",
+  "dependencies": {
+    "uuid": "^7.0.3",
+    "uuid-validate": "0.0.3"
+  }
+}

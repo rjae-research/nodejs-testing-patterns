@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-testing-patterns",
+  "version": "1.0.0",
+  "description": "Testing patterns for Node.js",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Rjae/nodejs-testing-patterns.git"
+  },
+  "keywords": [
+    "nodejs",
+    "testing",
+    "patterns"
+  ],
+  "author": "Rjae Easton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rjae/nodejs-testing-patterns/issues"
+  },
+  "homepage": "https://github.com/Rjae/nodejs-testing-patterns",
+  "dependencies": {
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.2.7"
+  }
+}
