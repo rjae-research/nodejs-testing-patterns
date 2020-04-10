@@ -11,7 +11,6 @@ class User {
     #lastName
 
     constructor(firstName, lastName, emailAddress, id = null) {
-      // When babel-eslint 11.0.0 released replace validation with field decorator.
       this.#firstName = firstName ?? raiseNullError('firstName');
       this.#lastName = lastName ?? raiseNullError('lastName');
       this.#emailAddress = emailAddress ?? raiseNullError('emailAddress');

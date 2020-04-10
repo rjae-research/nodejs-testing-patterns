@@ -16,7 +16,15 @@
     "parserOptions": {
         "ecmaVersion": 2019
     },
-    "rules": {},
+    "rules": {
+        "class-methods-use-this": 0,
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ]
+    },
     "settings": {
         "import/resolver": {
             "node": {
