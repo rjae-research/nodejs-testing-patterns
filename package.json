@@ -41,5 +41,11 @@
     "jest": "^25.2.7",
     "sinon": "^9.0.2",
     "uuid-validate": "0.0.3"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/.stryker-tmp/"
+    ]
   }
 }
