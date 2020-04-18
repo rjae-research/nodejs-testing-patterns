@@ -23,3 +23,11 @@ test('publish must call publisher produce', () => {
   new MessageBroker(producer).publish('42');
   expect(producer.produceCalled).toEqual(1);
 });
+
+test('getPartition must return 1 when called', () => {
+  expect(MessageBroker.getPartition('42')).toEqual(1);
+});
+
+test('publish must call publisher produce', () => {
+  expect(new MessageBroker(null).getMessage('42')).toEqual(JSON.stringify('42'));
+});

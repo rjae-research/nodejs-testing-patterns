@@ -17,7 +17,7 @@ test('equals must return false when other is null', () => {
 });
 
 test('equals must return true when value is null and other value is null', () => {
-  expect(new StringBase(null).equals(new StringBase(null))).toBeTruthy();
+  expect(new StringBase(null).equals(new StringBase(null))).toEqual(true);
 });
 
 test('equals must return false when value is null and other value is not null', () => {

@@ -12,11 +12,8 @@ class StringBase {
     if (other === null) {
       return false;
     }
-    if (this.value === null && other.value === null) {
-      return true;
-    }
-    if (this.value === null || this.cased || other.cased) {
-      return this.value === other.value;
+    if (this.cased || other.cased) {
+      return Object.is(this.value, other.value);
     }
     return this.value.toLocaleLowerCase() === other.value.toLocaleLowerCase();
   }
