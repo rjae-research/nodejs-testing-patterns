@@ -6,8 +6,12 @@ const hashCode = require('core/hashcode');
 class MockShardedMessageBroker extends ShardedMessageBroker {
   constructor(producer) {
     super(producer);
-    this.messages = new Map();
+    this._messages = new Map();
   }
+
+  get messages() { return this._messages; }
+
+  set messages(value) { this._messages = value; }
 
   publishMessage(partition, message) {
     super.publishMessage(partition, message);

@@ -2,8 +2,14 @@ const FileUtils = require('patterns/use-custom-mocks/fileutils');
 
 class MockFileSystem {
   constructor() {
-    this.unlinkSyncCalls = new Map();
+    this._unlinkSyncCalls = new Map();
   }
+
+  get unlinkSyncCalls() {
+    return this._unlinkSyncCalls;
+  }
+
+  set unlinkSyncCalls(value) { this._unlinkSyncCalls = value; }
 
   unlinkSync(path) {
     this.unlinkSyncCalls.set(path, this.unlinkSyncCalls.has(path) ? this.unlinkSyncCalls.get(path) + 1 : 1);

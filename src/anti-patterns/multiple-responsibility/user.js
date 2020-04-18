@@ -1,24 +1,16 @@
 const { v4: uuidv4 } = require('uuid');
 
 class User {
-  #emailAddress;
-
-  #firstName;
-
-  #id;
-
-  #lastName;
-
   constructor(firstName, lastName, emailAddress, id = null) {
     if (firstName === null || firstName.trim().length === 0) {
       throw new TypeError('firstName cannot be null or whitespace');
     } else {
-      this.#firstName = firstName;
+      this._firstName = firstName;
     }
     if (lastName === null || lastName.trim().length === 0) {
       throw new TypeError('lastName cannot be null or whitespace');
     } else {
-      this.#lastName = lastName;
+      this._lastName = lastName;
     }
     // BUG: emailAddress allows whitespace.
     // How did this happen? Someone forgot to change this validation.
@@ -26,18 +18,26 @@ class User {
     if (emailAddress === null || emailAddress.length === 0) {
       throw new TypeError('emailAddress cannot be null or empty');
     } else {
-      this.#emailAddress = emailAddress;
+      this._emailAddress = emailAddress;
     }
-    this.#id = id === null ? uuidv4() : id;
+    this._id = id === null ? uuidv4() : id;
   }
 
-  get firstName() { return this.#firstName; }
+  get firstName() { return this._firstName; }
 
-  get lastName() { return this.#lastName; }
+  set firstName(value) { this._firstName = value; }
 
-  get emailAddress() { return this.#emailAddress; }
+  get lastName() { return this._lastName; }
 
-  get id() { return this.#id; }
+  set lastName(value) { this._lastName = value; }
+
+  get emailAddress() { return this._emailAddress; }
+
+  set emailAddress(value) { this._emailAddress = value; }
+
+  get id() { return this._id; }
+
+  set id(value) { this._id = value; }
 }
 
 module.exports = User;

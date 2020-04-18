@@ -23,7 +23,8 @@
             {
                 "code": 120
             }
-        ]
+        ],
+        "no-underscore-dangle": "off"
     },
     "settings": {
         "import/resolver": {

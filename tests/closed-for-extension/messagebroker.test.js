@@ -4,8 +4,12 @@ const MessageBroker = require('anti-patterns/closed-for-extension/messagebroker'
 class MockMessageProducer extends MessageProducer {
   constructor() {
     super();
-    this.produceCalled = 0;
+    this._produceCalled = 0;
   }
+
+  get produceCalled() { return this._produceCalled; }
+
+  set produceCalled(value) { this._produceCalled = value; }
 
   produce(partition, message) {
     super.produce(partition, message);

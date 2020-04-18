@@ -16,7 +16,8 @@ test('constructor must throw error when lastName is null', () => {
 
 test('constructor must throw error when emailAddress is null', () => {
   expect(() => new User(new NonEmptyString('Bob'), new NonEmptyString('Smith'), null)).toThrow(TypeError);
-  expect(() => new User(new NonEmptyString('Bob'), new NonEmptyString('Smith'), null)).toThrow('emailAddress cannot be null');
+  expect(() => new User(new NonEmptyString('Bob'), new NonEmptyString('Smith'), null))
+    .toThrow('emailAddress cannot be null');
 });
 
 test('constructor must set id when id is null', () => {
@@ -31,11 +32,13 @@ test('constructor must set id when id is not null', () => {
 });
 
 test('constructor must set firstName when firstName is valid', () => {
-  expect(new User(new NonEmptyString('Bob'), new NonEmptyString('Smith'), new EmailAddress('@')).firstName.value).toEqual('Bob');
+  expect(new User(new NonEmptyString('Bob'), new NonEmptyString('Smith'), new EmailAddress('@')).firstName.value)
+    .toEqual('Bob');
 });
 
 test('constructor must set lastName when lastName is valid', () => {
-  expect(new User(new NonEmptyString('Bob'), new NonEmptyString('Smith'), new EmailAddress('@')).lastName.value).toEqual('Smith');
+  expect(new User(new NonEmptyString('Bob'), new NonEmptyString('Smith'), new EmailAddress('@')).lastName.value)
+    .toEqual('Smith');
 });
 
 test('constructor must set emailAddress when emailAddress is valid', () => {

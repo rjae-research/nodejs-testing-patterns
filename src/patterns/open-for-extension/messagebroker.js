@@ -1,28 +1,34 @@
 /* eslint-disable no-unused-vars */
 class MessageBroker {
-    #producer
+  constructor(producer) {
+    this._producer = producer;
+  }
 
-    constructor(producer) {
-      this.#producer = producer;
-    }
+  get producer() {
+    return this._producer;
+  }
 
-    getPartition(message) {
-      return 1;
-    }
+  set producer(value) {
+    this._producer = value;
+  }
 
-    publish(value) {
-      const message = this.getMessage(value);
-      const partition = this.getPartition(message);
-      this.publishMessage(partition, message);
-    }
+  getPartition(message) {
+    return 1;
+  }
 
-    publishMessage(partition, message) {
-      this.#producer.produce(partition, message);
-    }
+  publish(value) {
+    const message = this.getMessage(value);
+    const partition = this.getPartition(message);
+    this.publishMessage(partition, message);
+  }
 
-    getMessage(value) {
-      return JSON.stringify(value);
-    }
+  publishMessage(partition, message) {
+    this.producer.produce(partition, message);
+  }
+
+  getMessage(value) {
+    return JSON.stringify(value);
+  }
 }
 
 module.exports = MessageBroker;

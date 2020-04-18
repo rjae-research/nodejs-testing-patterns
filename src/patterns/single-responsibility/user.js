@@ -2,28 +2,28 @@ const { v4: uuidv4 } = require('uuid');
 const raiseNullError = require('core/raisenullerror');
 
 class User {
-    #emailAddress
+  constructor(firstName, lastName, emailAddress, id = null) {
+    this._firstName = firstName ?? raiseNullError('firstName');
+    this._lastName = lastName ?? raiseNullError('lastName');
+    this._emailAddress = emailAddress ?? raiseNullError('emailAddress');
+    this._id = id === null ? uuidv4() : id;
+  }
 
-    #firstName
+  get firstName() { return this._firstName; }
 
-    #id
+  set firstName(value) { this._firstName = value; }
 
-    #lastName
+  get lastName() { return this._lastName; }
 
-    constructor(firstName, lastName, emailAddress, id = null) {
-      this.#firstName = firstName ?? raiseNullError('firstName');
-      this.#lastName = lastName ?? raiseNullError('lastName');
-      this.#emailAddress = emailAddress ?? raiseNullError('emailAddress');
-      this.#id = id === null ? uuidv4() : id;
-    }
+  set lastName(value) { this._lastName = value; }
 
-    get firstName() { return this.#firstName; }
+  get emailAddress() { return this._emailAddress; }
 
-    get lastName() { return this.#lastName; }
+  set emailAddress(value) { this._emailAddress = value; }
 
-    get emailAddress() { return this.#emailAddress; }
+  get id() { return this._id; }
 
-    get id() { return this.#id; }
+  set id(value) { this._id = value; }
 }
 
 module.exports = User;

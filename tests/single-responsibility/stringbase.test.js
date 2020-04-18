@@ -42,11 +42,12 @@ test('equals must return true when cased is false and other cased is false and v
   expect(new StringBase('A', true, false).equals(new StringBase('A', true, false))).toBeTruthy();
 });
 
-test('equals must return false when cased is false and other cased is false and value is not equal to other value', () => {
-  expect(new StringBase('A', true, false).equals(new StringBase('b', true, false))).toBeFalsy();
-  expect(new StringBase('b', true, false).equals(new StringBase('A', true, false))).toBeFalsy();
-  expect(new StringBase('A', true, false).equals(new StringBase('B', true, false))).toBeFalsy();
-});
+test('equals must return false when cased is false and other cased is false and value is not equal to other value',
+  () => {
+    expect(new StringBase('A', true, false).equals(new StringBase('b', true, false))).toBeFalsy();
+    expect(new StringBase('b', true, false).equals(new StringBase('A', true, false))).toBeFalsy();
+    expect(new StringBase('A', true, false).equals(new StringBase('B', true, false))).toBeFalsy();
+  });
 
 test('toString must return value when called', () => {
   expect(`${new StringBase('42')}`).toEqual('42');

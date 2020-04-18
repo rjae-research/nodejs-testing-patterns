@@ -119,3 +119,5 @@ temp/
 !.vscode/extensions.json
 
 # End of https://www.gitignore.io/api/node
+# stryker temp files
+.stryker-tmp

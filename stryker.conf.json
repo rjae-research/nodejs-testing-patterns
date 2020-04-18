@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker/master/packages/api/schema/stryker-core.json",
+  "mutator": "javascript",
+  "packageManager": "npm",
+  "reporters": [
+    "html"
+  ],
+  "testRunner": "jest",
+  "transpilers": [
+    "babel"
+  ],
+  "coverageAnalysis": "off",
+  "babel": {
+    "optionsFile": "babel.config.js"
+  }
+}
