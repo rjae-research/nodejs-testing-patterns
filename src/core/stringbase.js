@@ -6,11 +6,7 @@ class StringBase {
 
   get value() { return this._value; }
 
-  set value(v) { this._value = v; }
-
   get cased() { return this._cased; }
-
-  set cased(v) { this._cased = v; }
 
   equals(other) {
     if (other === null) {

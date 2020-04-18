@@ -8,10 +8,6 @@ class MessageBroker {
     return this._producer;
   }
 
-  set producer(value) {
-    this._producer = value;
-  }
-
   getPartition(message) {
     return 1;
   }

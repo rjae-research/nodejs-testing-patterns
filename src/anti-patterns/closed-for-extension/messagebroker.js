@@ -10,8 +10,6 @@ class MessageBroker {
 
   get producer() { return this._producer; }
 
-  set producer(value) { this._producer = value; }
-
   publish(value) {
     const message = this.getMessage(value);
     const partition = MessageBroker.getPartition(message);

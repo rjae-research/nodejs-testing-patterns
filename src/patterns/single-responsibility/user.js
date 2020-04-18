@@ -11,19 +11,11 @@ class User {
 
   get firstName() { return this._firstName; }
 
-  set firstName(value) { this._firstName = value; }
-
   get lastName() { return this._lastName; }
-
-  set lastName(value) { this._lastName = value; }
 
   get emailAddress() { return this._emailAddress; }
 
-  set emailAddress(value) { this._emailAddress = value; }
-
   get id() { return this._id; }
-
-  set id(value) { this._id = value; }
 }
 
 module.exports = User;

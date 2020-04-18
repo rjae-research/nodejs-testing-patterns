@@ -5,8 +5,6 @@ class FileUtils {
 
   get fs() { return this._fs; }
 
-  set fs(value) { this._fs = value; }
-
   deleteFile(path) {
     this.fs.unlinkSync(path);
   }
