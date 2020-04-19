@@ -1,0 +1,42 @@
+name: Integration
+
+on:
+  push:
+    branches:
+    - '**'
+    - '!master'
+  pull_request:
+    branches:
+    - '**'
+    - '!master'
+
+env:
+  NODE_PATH: src
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install
+      run: npm install
+    - name: Unit Test
+      run: npm test
+    - name: Mutation Test
+      run: npx stryker run
+    - name: Upload Coverage
+      uses: actions/upload-artifact@v1
+      with:
+        name: Coverage
+        path: coverage
+    - name: Upload Mutation
+      uses: actions/upload-artifact@v1
+      with:
+        name: Mutation
+        path: reports
