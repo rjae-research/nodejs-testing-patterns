@@ -30,5 +30,13 @@ jobs:
       run: npm test
     - name: Mutation Test
       run: npx stryker run
-    - name: Upload
-      run: ls -R
+    - name: Upload Coverage
+      uses: actions/upload-artifact@v1
+      with:
+        name: Coverage
+        path: coverage
+    - name: Upload Mutation
+      uses: actions/upload-artifact@v1
+      with:
+        name: Mutation
+        path: reports
